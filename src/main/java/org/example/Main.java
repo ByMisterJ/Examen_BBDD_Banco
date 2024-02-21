@@ -338,7 +338,6 @@ public class Main {
             e.printStackTrace();
         }
     }
-
     public static void transaccionOrigen(Connection connection, Cuenta_bancaria cuenta_destino, int cantidad)  {
         String updateDataSQL = "UPDATE accounts SET iban=?,balance=?,clientid=? WHERE accountid = ?";
         try (PreparedStatement preparedStatement = connection.prepareStatement(updateDataSQL)) {
@@ -349,10 +348,8 @@ public class Main {
             preparedStatement.executeUpdate();
             System.out.println("Transaccion origen completada");
         }catch (SQLException e){
-
         }
     }
-
     public static void transaccionDestino(Connection connection,Cuenta_bancaria cuenta_destino,int cantidad)  {
         String updateDataSQL = "UPDATE accounts SET iban=?,balance=?,clientid=? WHERE accountid = ?";
         try (PreparedStatement preparedStatement = connection.prepareStatement(updateDataSQL)) {
@@ -363,7 +360,6 @@ public class Main {
             preparedStatement.executeUpdate();
             System.out.println("Transaccion destino completada");
         }catch (SQLException e){
-
         }
     }
 }
